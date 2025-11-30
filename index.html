@@ -4,84 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eastern Suburbs Realty | Luxury Property Specialists</title>
-  <meta name="description" content="Selling Sydney’s finest homes in Double Bay, Vaucluse, Point Piper & Rose Bay. Over $750M sold."/>
+  <meta name="description" content="Sydney's finest homes in Double Bay, Vaucluse, Point Piper & Rose Bay. Over $750M sold."/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            luxury: { gold: '#d4af37', navy: '#0f172a', cream: '#f5f5f4' }
-          },
-          fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] }
-        }
-      }
-    }
+      theme: { extend: { colors: { luxury: { gold: '#d4af37', navy: '#0f172a', cream: '#f5f5f4' }}}}}
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .nav-link { @apply text-cream hover:text-luxury-gold transition; }
+    .nav-active { @apply text-luxury-gold border-b-2 border-luxury-gold; }
+  </style>
 </head>
 <body class="bg-cream text-navy">
 
-  <!-- HERO -->
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur z-50 shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-3xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+      <div class="space-x-8 text-lg hidden md:flex">
+        <a href="/" class="nav-link nav-active">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/listings.html" class="nav-link">Listings</a>
+        <a href="/sold.html" class="nav-link">Sold</a>
+        <a href="/testimonials.html" class="nav-link">Testimonials</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (same as before) -->
   <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2946&auto=format&fit=crop')">
-    <div class="text-center px-6">
+    <div class="text-center px-6 pt-24">
       <h1 class="text-6xl md:text-8xl font-bold text-luxury-gold mb-6 font-serif">Eastern Suburbs Realty</h1>
       <p class="text-3xl md:text-5xl text-white mb-8">Luxury Property Specialists</p>
       <p class="text-xl md:text-2xl text-cream mb-12 max-w-3xl mx-auto">Double Bay • Vaucluse • Point Piper • Rose Bay<br>Over $750 million in sales</p>
-      
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="tel:+61400123456" class="bg-luxury-gold text-navy text-white font-bold text-2xl py-6 px-12 rounded-lg hover:scale-105 transition shadow-2xl">
-          Call 0400 123 456
-        </a>
-        <a href="#contact" class="bg-white text-luxury-navy font-bold text-2xl py-6 px-12 rounded-lg hover:bg-gray-100 transition">
-          Get Property Valuation
-        </a>
-      </div>
+      <a href="/contact.html" class="bg-luxury-gold text-navy font-bold text-2xl py-6 px-12 rounded-lg hover:scale-105 transition shadow-2xl inline-block">
+        Get Property Valuation →
+      </a>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="py-20 bg-navy text-white">
-    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-      <div>
-        <p class="text-6xl font-bold text-luxury-gold">$750M+</p>
-        <p class="text-2xl mt-2">Total Sales</p>
-      </div>
-      <div>
-        <p class="text-6xl font-bold text-luxury-gold">150+</p>
-        <p class="text-2xl mt-2">Properties Sold</p>
-      </div>
-      <div>
-        <p class="text-6xl font-bold text-luxury-gold">23</p>
-        <p class="text-2xl mt-2">Record Sales</p>
-      </div>
-      <div>
-        <p class="text-6xl font-bold text-luxury-gold">4.9★</p>
-        <p class="text-2xl mt-2">Client Rating</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / VALUATION -->
-  <section id="contact" class="py-32 bg-gradient-to-b from-cream to-white">
-    <div class="container mx-auto px-6 text-center max-w-2xl">
-      <h2 class="text-5xl font-bold font-serif text-navy mb-8">Thinking of Selling?</h2>
-      <p class="text-2xl mb-12">Get an obligation-free market appraisal today</p>
-      <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-6">
-        <input type="text" name="name" placeholder="Your Name" required class="w-full p-5 text-lg rounded-lg border border-gray-300"/>
-        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-5 text-lg rounded-lg border border-gray-300"/>
-        <input type="text" name="address" placeholder="Property Address (optional)" class="w-full p-5 text-lg rounded-lg border border-gray-300"/>
-        <button type="submit" class="bg-luxury-gold text-navy font-bold text-2xl py-6 px-16 rounded-lg hover:scale-105 transition shadow-xl w-full">
-          Request Valuation
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/61400123456?text=Hi, I'd like to discuss selling my property" class="fixed bottom-6 right-6 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition z-50">
-    Chat
-  </a>
-
+  <!-- STATS + rest of your original hero content here if you want -->
+   <footer class="bg-navy text-cream py-12 text-center">
+  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
+  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
+</footer>
 </body>
-</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials | Eastern Suburbs Realty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{luxury:{gold:'#d4af37',navy:'#0f172a',cream:'#f5f5f4'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-2 border-luxury-gold}</style>
+</head>
+<body class="bg-cream text-navy">
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur z-50 shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-3xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+      <div class="space-x-8 text-lg hidden md:flex">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/listings.html" class="nav-link">Listings</a>
+        <a href="/sold.html" class="nav-link">Sold</a>
+        <a href="/testimonials.html" class="nav-link nav-active">Testimonials</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-32 py-20 bg-gradient-to-b from-cream to-white">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h1 class="text-6xl md:text-7xl font-bold text-center font-serif text-navy mb-16">Client Love</h1>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-white p-10 rounded-2xl shadow-xl">
+          <p class="text-2xl italic mb-6">"Jessica sold our Vaucluse home in 9 days for $1.2M above reserve. Absolute legend."</p>
+          <p class="text-xl font-bold text-luxury-gold">— Michael & Sarah, Vaucluse</p>
+        </div>
+        <div class="bg-white p-10 rounded-2xl shadow-xl">
+          <p class="text-2xl italic mb-6">"Best agent in the East. Professional, calm, and got us $14.2M in a soft market."</p>
+          <p class="text-xl font-bold text-luxury-gold">— David Chen, Point Piper</p>
+        </div>
+        <!-- Add 4–6 more if you want -->
+      </div>
+    </div>
+  </section>
+  <footer class="bg-navy text-cream py-12 text-center">
+  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
+  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
+</footer>
+</body>
+</html>

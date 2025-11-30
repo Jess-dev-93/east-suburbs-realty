@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Valuation | Eastern Suburbs Realty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{luxury:{gold:'#d4af37',navy:'#0f172a',cream:'#f5f5f4'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap" rel="stylesheet">
+  <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-2 border-luxury-gold}</style>
+</head>
+<body class="bg-navy text-cream">
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur z-50 shadow-lg">…same nav…</nav>
+
+  <section class="pt-32 py-20 min-h-screen flex items-center">
+    <div class="container mx-auto px-6 max-w-3xl mx-auto text-center">
+      <h1 class="text-6xl md:text-7xl font-bold font-serif text-luxury-gold mb-12">Free Property Valuation</h1>
+      <p class="text-2xl mb-12">Obligation-free appraisal within 24 hours</p>
+      
+      <form action="https://formspree.io/f/YOUR_ID" method="POST" class="bg-white/10 backdrop-blur p-10 rounded-2xl space-y-8">
+        <input type="text" name="name" placeholder="Name" required class="w-full p-5 text-black text-lg rounded-lg" required>
+        <input type="email" name="email" placeholder="Email" required class="w-full p-5 text-black text-lg rounded-lg">
+        <input type="tel" name="phone" placeholder="Phone" required class="w-full p-5 text-black text-lg rounded-lg" required>
+        <input type="text" name="address" placeholder="Property address (optional)" class="w-full p-5 text-black text-lg rounded-lg">
+        <textarea name="message" rows="5" placeholder="Anything else we should know?" class="w-full p-5 text-black text-lg rounded-lg"></textarea>
+        <button type="submit" class="bg-luxury-gold text-navy font-bold text-2xl py-6 px-20 rounded-lg hover:scale-105 transition w-full">
+          Request Valuation
+        </button>
+      </form>
+
+      <p class="mt-12 text-xl">Or call <a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> now</p>
+    </div>
+  </section>
+  <footer class="bg-navy text-cream py-12 text-center">
+  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
+  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
+</footer>
+</body>
+</html>
