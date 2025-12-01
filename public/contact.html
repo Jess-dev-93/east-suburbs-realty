@@ -10,7 +10,19 @@
   <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-2 border-luxury-gold}</style>
 </head>
 <body class="bg-navy text-cream">
-  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur z-50 shadow-lg">…same nav…</nav>
+   <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50 border-b border-white/10">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="/" class="text-4xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+      <div class="hidden lg:flex space-x-10 text-lg font-medium">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-active nav-link">About</a>
+        <a href="/listings.html" class="nav-link">Listings</a>
+        <a href="/sold.html" class="nav-link">Sold</a>
+        <a href="/testimonials.html" class="nav-link">Testimonials</a>
+        <a href="/contact.html" class="nav-link bg-luxury-gold text-navy px-6 py-3 rounded-lg">Valuation</a>
+      </div>
+    </div>
+  </nav>
 
   <section class="pt-32 py-20 min-h-screen flex items-center">
     <div class="container mx-auto px-6 max-w-3xl mx-auto text-center">
