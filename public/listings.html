@@ -1,22 +1,50 @@
-<!-- same head/nav -->
-<section class="pt-32 py-20 bg-cream">
-  <div class="container mx-auto px-6">
-    <h1 class="text-6xl font-bold text-center font-serif text-navy mb-16">Current Listings</h1>
-    <div class="grid md:grid-cols-3 gap-10">
-      <!-- repeat this card 6 times with different photos -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-xl">
-        <div class="h-80 bg-cover" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800')"></div>
-        <div class="p-6">
-          <p class="text-luxury-gold font-bold text-xl">$6,950,000</p>
-          <p class="text-2xl font-bold">Vaucluse Waterfront</p>
-          <p class="text-gray-600">5 Bed | 4 Bath | 3 Car</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Current Listings | Eastern Suburbs Realty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{luxury:{gold:'#d4af37',navy:'#0f172a',cream:'#fafaf9'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap" rel="stylesheet">
+  <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-4 border-luxury-gold pb-1}</style>
+</head>
+<body class="bg-cream text-navy">
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50 border-b border-white/10">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="/" class="text-4xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+      <div class="hidden lg:flex space-x-10 text-lg font-medium">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/listings.html" class="nav-active nav-link">Listings</a>
+        <a href="/sold.html" class="nav-link">Sold</a>
+        <a href="/testimonials.html" class="nav-link">Testimonials</a>
+        <a href="/contact.html" class="nav-link bg-luxury-gold text-navy px-6 py-3 rounded-lg">Valuation</a>
       </div>
-      <!-- 5 more cards -->
     </div>
-  </div>
-</section>
-<footer class="bg-navy text-cream py-12 text-center">
-  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
-  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
-</footer>
+  </nav>
+
+  <section class="pt-32 py-16">
+    <div class="container mx-auto px-6">
+      <h1 class="text-6xl md:text-7xl font-bold text-center font-serif text-navy mb-16">Current Listings</h1>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Repeat this block 6–9 times with different photos -->
+        <a href="/contact.html" class="group block">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800" class="w-full h-96 object-cover">
+              <div class="absolute top-4 left-4 bg-luxury-gold text-navy px-4 py-2 rounded-full font-bold">FOR SALE</div>
+            </div>
+            <div class="p-8">
+              <p class="text-3xl font-bold text-luxury-gold">$8,750,000</p>
+              <p class="text-2xl font-semibold mt-2">Vaucluse Harbourfront</p>
+              <p class="text-gray-600">5 Bed | 6 Bath | 4 Car | Pool</p>
+            </div>
+          </div>
+        </a>
+        <!-- Add 5–8 more identical blocks with different images -->
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -3,27 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Eastern Suburbs Realty</title>
+  <title>About Jessica Hart | Eastern Suburbs Realty</title>
+  <meta property="og:image" content="/og/about.jpg"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- same tailwind config & fonts as above -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>.nav-link { @apply text-cream hover:text-luxury-gold transition; } .nav-active { @apply text-luxury-gold border-b-2 border-luxury-gold; }</style>
+  <script>tailwind.config={theme:{extend:{colors:{luxury:{gold:'#d4af37',navy:'#0f172a',cream:'#fafaf9'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-4 border-luxury-gold pb-1}</style>
 </head>
 <body class="bg-cream text-navy">
-  <!-- same nav as index.html -->
-  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur z-50 shadow-lg">…</nav>
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50 border-b border-white/10">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="/" class="text-4xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+      <div class="hidden lg:flex space-x-10 text-lg font-medium">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-active nav-link">About</a>
+        <a href="/listings.html" class="nav-link">Listings</a>
+        <a href="/sold.html" class="nav-link">Sold</a>
+        <a href="/testimonials.html" class="nav-link">Testimonials</a>
+        <a href="/contact.html" class="nav-link bg-luxury-gold text-navy px-6 py-3 rounded-lg">Valuation</a>
+      </div>
+    </div>
+  </nav>
 
-  <section class="pt-32 pb-20">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h1 class="text-6xl font-bold font-serif text-luxury-gold mb-8">Jessica Hart</h1>
-      <p class="text-2xl mb-8">Principal & Licensed Agent</p>
-      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800" alt="Jessica" class="w-64 h-64 rounded-full mx-auto mb-12 object-cover">
-      <p class="text-xl leading-relaxed">With over 12 years experience and $750M+ in sales, Jessica is consistently ranked in the top 1% of agents in the Eastern Suburbs…</p>
+  <section class="pt-32 pb-20 bg-gradient-to-b from-cream to-white">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <img src="/images/jessica.jpg" alt="Jessica Hart" class="rounded-2xl shadow-2xl">
+        </div>
+        <div>
+          <h1 class="text-6xl font-bold font-serif text-luxury-gold mb-8">Jessica Hart</h1>
+          <p class="text-2xl mb-6">Principal & Licensed Agent – REB Top 100 Australia 2024 years running</p>
+          <p class="text-lg leading-relaxed mb-8">
+            With over 14 years experience and $750M+ in luxury sales across Double Bay, Vaucluse, Point Piper and Rose Bay, 
+            Jessica consistently ranks in the top 1% of agents nationwide. Known for discretion, record-breaking results 
+            and white-glove service for Sydney’s most prestigious properties.
+          </p>
+          <div class="grid grid-cols-3 gap-8 text-center">
+            <div><p class="text-5xl font-black text-luxury-gold">$750M+</p><p class="text-lg">Career Sales</p></div>
+            <div><p class="text-5xl font-black text-luxury-gold">23</p><p class="text-lg">Suburb Records</p></div>
+            <div><p class="text-5xl font-black text-luxury-gold">98%</p><p class="text-lg">Sale Success</p></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <footer class="bg-navy text-cream py-12 text-center">
-  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
-  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
-</footer>
 </body>
 </html>

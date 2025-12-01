@@ -1,17 +1,28 @@
-<!-- same head/nav -->
-<section class="pt-32 py-20 bg-navy text-white">
-  <div class="container mx-auto px-6 text-center">
-    <h1 class="text-6xl font-bold font-serif text-luxury-gold mb-16">Recently Sold</h1>
-    <div class="grid md:grid-cols-4 gap-8">
-      <div class="bg-white/10 backdrop-blur p-8 rounded-xl">
-        <p class="text-5xl font-black text-luxury-gold">$14.2M</p>
-        <p class="text-xl mt-4">Point Piper</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recently Sold | Eastern Suburbs Realty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{luxury:{gold:'#d4af37',navy:'#0f172a',cream:'#fafaf9'}}}}}</script>
+  <style>.nav-link{@apply text-cream hover:text-luxury-gold transition}.nav-active{@apply text-luxury-gold border-b-4 border-luxury-gold pb-1}</style>
+</head>
+<body class="bg-navy text-cream">
+  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50">…same nav…</nav>
+
+  <section class="pt-32 py-20">
+    <div class="container mx-auto px-6">
+      <h1 class="text-6xl md:text-7xl font-bold text-center font-serif text-luxury-gold mb-20">Recently Sold</h1>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" class="rounded-2xl">
+          <p class="text-4xl font-bold mt-6">$14.2M</p>
+          <p class="text-xl">Point Piper Waterfront – Suburb Record</p>
+        </div>
+        <!-- 8–12 more sold properties -->
       </div>
-      <!-- repeat with 7 more big sales -->
     </div>
-  </div>
-</section>
-<footer class="bg-navy text-cream py-12 text-center">
-  <p class="text-xl">Eastern Suburbs Realty © 2025 | Licensed Agent NSW</p>
-  <p class="mt-4"><a href="tel:+61400123456" class="text-luxury-gold underline">0400 123 456</a> • Double Bay NSW</p>
-</footer>
+  </section>
+</body>
+</html>
