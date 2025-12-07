@@ -11,27 +11,61 @@
     tailwind.config = { theme: { extend: { colors: { luxury: { gold: '#d4af37', navy: '#0f172a', cream: '#fafaf9' } } } } }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <style>
     .nav-link { @apply text-cream hover:text-luxury-gold transition; }
     .nav-active { @apply text-luxury-gold border-b-4 border-luxury-gold pb-1; }
   </style>
+  <script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger');
+  const close = document.getElementById('close');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburger.classList.toggle('hidden');
+    close.classList.toggle('hidden');
+  });
+</script>
 </head>
 <body class="bg-cream text-navy">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50 border-b border-white/10">
-    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="/" class="text-4xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
-      <div class="hidden lg:flex space-x-10 text-lg font-medium">
-        <a href="/" class="nav-active nav-link">Home</a>
-        <a href="/about.html" class="nav-link">About</a>
-        <a href="/listings.html" class="nav-link">Listings</a>
-        <a href="/sold.html" class="nav-link">Sold</a>
-        <a href="/testimonials.html" class="nav-link">Testimonials</a>
-        <a href="/contact.html" class="nav-link bg-luxury-gold text-navy px-6 py-3 rounded-lg hover:bg-yellow-500 transition">Valuation</a>
-      </div>
+<nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-lg z-50 border-b border-white/10">
+  <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+    <a href="/" class="text-3xl md:text-4xl font-bold text-luxury-gold font-serif">Eastern Suburbs Realty</a>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex space-x-10 text-lg font-medium">
+      <a href="/" class="nav-active nav-link">Home</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/listings.html" class="nav-link">Listings</a>
+      <a href="/sold.html" class="nav-link">Sold</a>
+      <a href="/testimonials.html" class="nav-link">Testimonials</a>
+      <a href="/contact.html" class="nav-link bg-luxury-gold text-navy px-6 py-3 rounded-lg hover:bg-yellow-500 transition">Valuation</a>
     </div>
-  </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="lg:hidden text-cream text-2xl">
+      <span id="hamburger">☰</span>
+      <span id="close" class="hidden">✕</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden bg-navy/98 backdrop-blur-lg hidden">
+    <div class="px-6 py-4 space-y-4">
+      <a href="/" class="block text-luxury-gold text-xl py-3 border-b border-luxury-gold/30">Home</a>
+      <a href="/about.html" class="block text-cream text-xl py-3 border-b border-white/20">About</a>
+      <a href="/listings.html" class="block text-cream text-xl py-3 border-b border-white/20">Listings</a>
+      <a href="/sold.html" class="block text-cream text-xl py-3 border-b border-white/20">Sold</a>
+      <a href="/testimonials.html" class="block text-cream text-xl py-3 border-b border-white/20">Testimonials</a>
+      <a href="/contact.html" class="block bg-luxury-gold text-navy text-xl font-bold py-4 px-6 rounded-lg mt-4 text-center">Free Valuation</a>
+    </div>
+  </div>
+</nav>
 
   <!-- HERO VIDEO -->
   <section class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -121,6 +155,112 @@
       </div>
     </div>
   </section>
+
+<!-- FEATURED NEIGHBORHOODS -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold text-center font-serif text-navy mb-16">Prime Eastern Suburbs Locations</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      
+      <div class="text-center group">
+        <img src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=600" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-navy mb-4">Vaucluse</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">Harbourfront mansions with unparalleled water views. Average sale price $8.5M</p>
+        <p class="text-luxury-gold font-bold text-xl mt-4">15 Active Listings</p>
+      </div>
+
+      <div class="text-center group">
+        <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=600" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-navy mb-4">Double Bay</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">Sophisticated shopping and dining precinct with heritage charm. Average sale price $4.2M</p>
+        <p class="text-luxury-gold font-bold text-xl mt-4">8 Active Listings</p>
+      </div>
+
+      <div class="text-center group">
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600" class="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-navy mb-4">Woollahra</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">Tree-lined streets with Federation homes and modern luxury. Average sale price $3.8M</p>
+        <p class="text-luxury-gold font-bold text-xl mt-4">12 Active Listings</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-24 bg-luxury-gold">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold text-center font-serif text-navy mb-16">Why Eastern Suburbs Trusts Us</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      
+      <div class="text-center">
+        <div class="text-6xl mb-6">🏆</div>
+        <h3 class="text-2xl font-bold text-navy mb-4">Record Breaking Sales</h3>
+        <p class="text-navy/80">23 suburb price records set in the last 2 years. We know how to maximize your property value.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="text-6xl mb-6">🎯</div>
+        <h3 class="text-2xl font-bold text-navy mb-4">Local Market Expertise</h3>
+        <p class="text-navy/80">Born and raised in the Eastern Suburbs. 20+ years of hyperlocal market knowledge.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="text-6xl mb-6">🤝</div>
+        <h3 class="text-2xl font-bold text-navy mb-4">White Glove Service</h3>
+        <p class="text-navy/80">Concierge-level support throughout your entire buying or selling journey. Available 7 days.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="text-6xl mb-6">📈</div>
+        <h3 class="text-2xl font-bold text-navy mb-4">Premium Marketing</h3>
+        <p class="text-navy/80">Professional photography, virtual tours, and targeted digital campaigns that get results.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- RECENT SALES -->
+<section class="py-24 bg-cream">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold text-center font-serif text-navy mb-16">Recent Record Sales</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600" class="w-full h-48 object-cover rounded-lg mb-6">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-luxury-gold mb-2">SOLD $12.5M</p>
+          <p class="text-xl font-bold text-navy mb-2">Vaucluse Waterfront</p>
+          <p class="text-gray-600 mb-4">Sold $2.5M above reserve • 14 days on market</p>
+          <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold">SUBURB RECORD</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600" class="w-full h-48 object-cover rounded-lg mb-6">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-luxury-gold mb-2">SOLD $8.9M</p>
+          <p class="text-xl font-bold text-navy mb-2">Point Piper Penthouse</p>
+          <p class="text-gray-600 mb-4">Sold $1.4M above reserve • 7 days on market</p>
+          <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold">BUILDING RECORD</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" class="w-full h-48 object-cover rounded-lg mb-6">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-luxury-gold mb-2">SOLD $6.7M</p>
+          <p class="text-xl font-bold text-navy mb-2">Double Bay Heritage</p>
+          <p class="text-gray-600 mb-4">Sold at auction • 21 registered bidders</p>
+          <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-bold">STREET RECORD</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- TRUST BADGES -->
   <section class="py-16 bg-navy text-cream text-center">
