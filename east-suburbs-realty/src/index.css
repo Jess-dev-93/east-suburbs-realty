@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link { @apply text-luxury-cream hover:text-luxury-gold transition; }
+  .nav-active { @apply text-luxury-gold border-b-4 border-luxury-gold pb-1; }
+  .btn-gold { @apply bg-luxury-gold text-luxury-navy font-bold px-12 py-6 rounded-xl hover:scale-105 transition shadow-2xl text-2xl; }
+}
