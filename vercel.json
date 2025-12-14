@@ -1,7 +1,5 @@
 {
   "buildCommand": "",
-  "framework": null,
   "installCommand": "",
-  "outputDirectory": ".",
-  "generateStaticPage": true
+  "outputDirectory": "."
 }
