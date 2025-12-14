@@ -23,7 +23,24 @@
 /* Initial state for sections */
 section, .group { opacity: 0; transform: translateY(3rem); transition: all 1s ease-out; }
   </style>
+  <script>
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger');
+  const close = document.getElementById('close');
   
+  mobileMenu.classList.toggle('hidden');
+  hamburger.classList.toggle('hidden');
+  close.classList.toggle('hidden');
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggleMobileMenu();
+  });
+});
+</script>
 </head>
 <body class="bg-cream text-navy">
 
