@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eastern Suburbs Realty | $750M+ in Luxury Sales</title>
   <meta property="og:image" content="/og/home.jpg"/>
-  <script src="/script.js"></script>
+  <script src="js/script.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { luxury: { gold: '#d4af37', navy: '#0f172a', cream: '#fafaf9' } } } } }
@@ -17,17 +17,22 @@
     .nav-active { @apply text-luxury-gold border-b-4 border-luxury-gold pb-1; }
   </style>
   <script>
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+function toggleMobileMenu() {
   const mobileMenu = document.getElementById('mobile-menu');
   const hamburger = document.getElementById('hamburger');
   const close = document.getElementById('close');
+  
+  mobileMenu.classList.toggle('hidden');
+  hamburger.classList.toggle('hidden');
+  close.classList.toggle('hidden');
+}
 
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    hamburger.classList.toggle('hidden');
-    close.classList.toggle('hidden');
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggleMobileMenu();
   });
+});
 </script>
 </head>
 <body class="bg-cream text-navy">
@@ -39,7 +44,7 @@
     
     <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-10 text-lg font-medium">
-      <a href="/" class="nav-active nav-link">Home</a>
+      <a href="/" class="nav-link">Home</a>
       <a href="/about.html" class="nav-link">About</a>
       <a href="/listings.html" class="nav-link">Listings</a>
       <a href="/sold.html" class="nav-link">Sold</a>
@@ -48,21 +53,21 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn" class="lg:hidden text-cream text-2xl">
+    <button onclick="toggleMobileMenu()" class="lg:hidden text-cream text-3xl focus:outline-none">
       <span id="hamburger">☰</span>
       <span id="close" class="hidden">✕</span>
     </button>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden bg-navy/98 backdrop-blur-lg hidden">
+  <div id="mobile-menu" class="lg:hidden bg-navy/98 backdrop-blur-lg hidden absolute top-full left-0 right-0 shadow-xl">
     <div class="px-6 py-4 space-y-4">
-      <a href="/" class="block text-luxury-gold text-xl py-3 border-b border-luxury-gold/30">Home</a>
-      <a href="/about.html" class="block text-cream text-xl py-3 border-b border-white/20">About</a>
-      <a href="/listings.html" class="block text-cream text-xl py-3 border-b border-white/20">Listings</a>
-      <a href="/sold.html" class="block text-cream text-xl py-3 border-b border-white/20">Sold</a>
-      <a href="/testimonials.html" class="block text-cream text-xl py-3 border-b border-white/20">Testimonials</a>
-      <a href="/contact.html" class="block bg-luxury-gold text-navy text-xl font-bold py-4 px-6 rounded-lg mt-4 text-center">Free Valuation</a>
+      <a href="/" class="block text-luxury-gold text-xl py-3 border-b border-luxury-gold/30 font-semibold">Home</a>
+      <a href="/about.html" class="block text-cream text-xl py-3 border-b border-white/20 hover:text-luxury-gold transition">About</a>
+      <a href="/listings.html" class="block text-cream text-xl py-3 border-b border-white/20 hover:text-luxury-gold transition">Listings</a>
+      <a href="/sold.html" class="block text-cream text-xl py-3 border-b border-white/20 hover:text-luxury-gold transition">Sold</a>
+      <a href="/testimonials.html" class="block text-cream text-xl py-3 border-b border-white/20 hover:text-luxury-gold transition">Testimonials</a>
+      <a href="/contact.html" class="block bg-luxury-gold text-navy text-xl font-bold py-4 px-6 rounded-lg mt-4 text-center hover:bg-yellow-500 transition">Free Valuation</a>
     </div>
   </div>
 </nav>
