@@ -15,25 +15,15 @@
   <style>
     .nav-link { @apply text-cream hover:text-luxury-gold transition; }
     .nav-active { @apply text-luxury-gold border-b-4 border-luxury-gold pb-1; }
-  </style>
-  <script>
-function toggleMobileMenu() {
-  const mobileMenu = document.getElementById('mobile-menu');
-  const hamburger = document.getElementById('hamburger');
-  const close = document.getElementById('close');
-  
-  mobileMenu.classList.toggle('hidden');
-  hamburger.classList.toggle('hidden');
-  close.classList.toggle('hidden');
+    .animate-fadeInUp {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 1s ease-out !important;
 }
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    toggleMobileMenu();
-  });
-});
-</script>
+/* Initial state for sections */
+section, .group { opacity: 0; transform: translateY(3rem); transition: all 1s ease-out; }
+  </style>
+  
 </head>
 <body class="bg-cream text-navy">
 
@@ -53,7 +43,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
     </div>
 
     <!-- Mobile Menu Button -->
-    <button onclick="toggleMobileMenu()" class="lg:hidden text-cream text-3xl focus:outline-none">
+    <button class="lg:hidden text-cream text-3xl focus:outline-none">
       <span id="hamburger">☰</span>
       <span id="close" class="hidden">✕</span>
     </button>
@@ -82,7 +72,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
       <h1 class="text-6xl md:text-8xl font-bold text-luxury-gold mb-6 font-serif pt-40 ">Eastern Suburbs<br>Luxury Property</h1>
       <p class="text-3xl md:text-5xl text-white mb-10">Over $750 Million Sold</p>
       <div class="flex flex-col sm:flex-row gap-8 justify-center mt-12">
-        <a href="/listings.html" class="bg-luxury-gold text-navy font-bold text-2xl px-12 py-6 rounded-xl hover:scale-105 transition shadow-2xl">View Current Listings</a>
+        <a href="/listings.html" id="hero-cta" class="bg-luxury-gold text-navy font-bold text-2xl px-12 py-6 rounded-xl hover:scale-105 transition shadow-2xl">View Current Listings</a>
         <a href="/contact.html" class="border-4 border-white text-white font-bold text-2xl px-12 py-6 rounded-xl hover:bg-white hover:text-navy transition">Free Valuation</a>
       </div>
     </div>
